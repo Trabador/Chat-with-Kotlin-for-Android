@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1069438324484",
+    "firebase_url": "https://messengermock.firebaseio.com",
+    "project_id": "messengermock",
+    "storage_bucket": "messengermock.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069438324484:android:2b753d555633a601",
+        "android_client_info": {
+          "package_name": "com.alexis.messengermock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069438324484-fgttajc7f8m8qd2l949jfeigiih2r8n8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alexis.messengermock",
+            "certificate_hash": "aaad3cb080b198e5d86fcd56583711d32020a9be"
+          }
+        },
+        {
+          "client_id": "1069438324484-ipndikv2425pugo0ehmlq722c61c3hbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAE8gbCchfb4P4pGEReS80AHZ-GjPjMi7s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069438324484-ipndikv2425pugo0ehmlq722c61c3hbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
