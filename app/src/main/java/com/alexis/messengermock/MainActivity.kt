@@ -51,6 +51,9 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext, "User Created", Toast.LENGTH_SHORT).show()
                         emailField.setText("")
                         passField.setText("")
+                        val intentToMainMenu = Intent(this, MainMenu::class.java)
+                        intentToMainMenu.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        startActivity(intentToMainMenu)
                     }.addOnFailureListener {
                         Log.d("Main", "Error creating user: ${it.message}")
                         Toast.makeText(applicationContext, "Error with email: ${it.message}", Toast.LENGTH_SHORT).show()

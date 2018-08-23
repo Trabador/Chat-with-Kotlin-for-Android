@@ -35,6 +35,7 @@ class Login : AppCompatActivity() {
                     }
                     Log.d("login", "Success Login ")
                     val intentToMainMenu = Intent(this, MainMenu::class.java)
+                    intentToMainMenu.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intentToMainMenu)
                 }.addOnFailureListener {
                     Log.d("login", "Fail to login: ${it.message}")
