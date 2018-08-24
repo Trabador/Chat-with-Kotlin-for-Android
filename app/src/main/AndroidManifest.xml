@@ -25,8 +25,14 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".NewMessage">
-            <meta-data android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainMenu"/>
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainMenu" />
+        </activity>
+        <activity android:name=".ChatScreen">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NewMessage" />
         </activity>
     </application>
 

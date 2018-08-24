@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         val uid = fbAuth.uid
         if(uid != null) {
             val refToNewUser = dbRef.child(uid)
-            val newUser = User(email, "")
+            val newUser = User(uid , email, "")
             refToNewUser.setValue(newUser)
                     .addOnSuccessListener {
                         Log.d("Main", "User saved into database")

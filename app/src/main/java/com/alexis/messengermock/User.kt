@@ -1,5 +1,9 @@
 package com.alexis.messengermock
 
-data class User(val email: String, val userImageUrl: String) {
-    constructor(): this("","")
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class User(val uid: String, val email: String, val userImageUrl: String): Parcelable {
+    constructor(): this("","", "")
 }
