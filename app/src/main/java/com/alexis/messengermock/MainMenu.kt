@@ -19,7 +19,7 @@ class MainMenu : AppCompatActivity() {
 
     private fun verifyUserIsLogged() {
         if(FirebaseAuth.getInstance().uid == null){
-            val intentToRegister = Intent(this,MainActivity::class.java)
+            val intentToRegister = Intent(this,Register::class.java)
             intentToRegister.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intentToRegister)
         }
@@ -39,6 +39,10 @@ class MainMenu : AppCompatActivity() {
             R.id.nav_sign_out -> {
                 FirebaseAuth.getInstance().signOut()
                 verifyUserIsLogged()
+            }
+            R.id.nav_user_settings ->{
+                val intentToUserSettings = Intent(this, UserSettings::class.java)
+                startActivity(intentToUserSettings)
             }
         }
         return super.onOptionsItemSelected(item)

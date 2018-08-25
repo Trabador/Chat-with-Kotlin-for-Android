@@ -6,6 +6,10 @@
         android:title="New Message"
         app:showAsAction="ifRoom"/>
 
+    <item android:id="@+id/nav_user_settings"
+        android:title="Settings"
+        app:showAsAction="always"/>
+
     <item android:id="@+id/nav_sign_out"
         android:title="Sign Out"
         app:showAsAction="ifRoom"/>

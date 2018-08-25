@@ -11,10 +11,11 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.FirebaseDatabase.*
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class Register : AppCompatActivity() {
 
     private lateinit var fbAuth: FirebaseAuth
     private lateinit var dbRef: DatabaseReference
+    private val defaultImageUrl: String = "https://firebasestorage.googleapis.com/v0/b/messengermock.appspot.com/o/images%2Fdefault-user.png?alt=media&token=4645e0ff-29f9-4971-825f-c72df19603ec"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
         val uid = fbAuth.uid
         if(uid != null) {
             val refToNewUser = dbRef.child(uid)
-            val newUser = User(uid , email, "")
+            val newUser = User(uid , email, defaultImageUrl)
             refToNewUser.setValue(newUser)
                     .addOnSuccessListener {
                         Log.d("Main", "User saved into database")
