@@ -1,8 +1,12 @@
-package com.alexis.messengermock
+package com.alexis.messengermock.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.DividerItemDecoration
+import com.alexis.messengermock.dataclasses.User
+import com.alexis.messengermock.R
+import com.alexis.messengermock.viewitems.UserItem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -10,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
+import kotlinx.android.synthetic.main.abc_screen_toolbar.*
 import kotlinx.android.synthetic.main.activity_new_message.*
 
 class NewMessage : AppCompatActivity() {
@@ -21,6 +26,7 @@ class NewMessage : AppCompatActivity() {
         supportActionBar?.title = "Friend List"
 
         fetchUsersFromFireBase()
+        usersList.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
     }
 
     companion object {

@@ -1,5 +1,6 @@
-package com.alexis.messengermock
+package com.alexis.messengermock.viewitems
 
+import com.alexis.messengermock.R
 import com.squareup.picasso.Picasso
 import com.xwray.groupie.Item
 import com.xwray.groupie.ViewHolder

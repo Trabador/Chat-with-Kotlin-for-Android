@@ -1,14 +1,15 @@
-package com.alexis.messengermock
+package com.alexis.messengermock.activities
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.alexis.messengermock.dataclasses.User
+import com.alexis.messengermock.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.FirebaseDatabase.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 class Register : AppCompatActivity() {
@@ -66,7 +67,7 @@ class Register : AppCompatActivity() {
         val uid = fbAuth.uid
         if(uid != null) {
             val refToNewUser = dbRef.child(uid)
-            val newUser = User(uid , email, defaultImageUrl)
+            val newUser = User(uid, email, defaultImageUrl)
             refToNewUser.setValue(newUser)
                     .addOnSuccessListener {
                         Log.d("Main", "User saved into database")

@@ -1,4 +1,4 @@
-package com.alexis.messengermock
+package com.alexis.messengermock.dataclasses
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

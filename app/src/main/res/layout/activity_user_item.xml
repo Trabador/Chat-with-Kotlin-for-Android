@@ -7,14 +7,27 @@
 
     <TextView
         android:id="@+id/userItemText"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/friendImage"
+        app:layout_constraintStart_toEndOf="@+id/friendImage"
+        app:layout_constraintTop_toTopOf="@+id/friendImage" />
+
+    <ImageView
+        android:id="@+id/friendImage"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@android:drawable/btn_star" />
+
 </android.support.constraint.ConstraintLayout>

@@ -1,10 +1,11 @@
-package com.alexis.messengermock
+package com.alexis.messengermock.activities
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.alexis.messengermock.R
 import com.google.firebase.auth.FirebaseAuth
 
 class MainMenu : AppCompatActivity() {
@@ -19,7 +20,7 @@ class MainMenu : AppCompatActivity() {
 
     private fun verifyUserIsLogged() {
         if(FirebaseAuth.getInstance().uid == null){
-            val intentToRegister = Intent(this,Register::class.java)
+            val intentToRegister = Intent(this, Register::class.java)
             intentToRegister.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intentToRegister)
         }

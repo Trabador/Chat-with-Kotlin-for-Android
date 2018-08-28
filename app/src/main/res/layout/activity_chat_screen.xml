@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3fa6b6"
-    tools:context=".ChatScreen">
+    tools:context=".activities.ChatScreen">
 
     <EditText
         android:id="@+id/messageText"
