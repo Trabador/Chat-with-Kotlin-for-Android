@@ -51,6 +51,11 @@ class ChatScreen : AppCompatActivity() {
     }
 
     private fun sendMessage(receiverId: String){
+        saveMessageToDataBase(receiverId)
+        saveLatestMessageToDataBase(receiverId)
+    }
+
+    private fun saveMessageToDataBase(receiverId: String){
         val senderId = FirebaseAuth.getInstance().uid
         val textMessage = messageText.text.toString()
         val dbRef = FirebaseDatabase.getInstance().getReference("/messages/$senderId/$receiverId").push()
@@ -66,6 +71,21 @@ class ChatScreen : AppCompatActivity() {
             dbRefToUser.setValue(newMessageRecord)
                     .addOnSuccessListener {
                         Log.d("ChatScreen", "Message sended")
+                    }
+        }
+    }
+
+    private fun saveLatestMessageToDataBase(receiverId: String){
+        val senderId = FirebaseAuth.getInstance().uid
+        val textMessage = messageText.text.toString()
+        val dbRef = FirebaseDatabase.getInstance().getReference("/latest-messages/$receiverId/$senderId")
+        val id = dbRef.key
+        if(receiverId != null && senderId != null && id != null) {
+            val newMessageRecord = Message(id, senderId, receiverId, textMessage, System.currentTimeMillis().toString())
+            dbRef.setValue(newMessageRecord)
+                    .addOnSuccessListener {
+                        Log.d("ChatScreen", "Message sended")
+                        messageText.setText("")
                     }
         }
     }
