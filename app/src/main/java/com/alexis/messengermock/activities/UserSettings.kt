@@ -68,6 +68,7 @@ class UserSettings : AppCompatActivity() {
                                     .addOnSuccessListener {
                                         Log.d("User", "Success updating")
                                         Toast.makeText(applicationContext, "Information  Updated ", Toast.LENGTH_SHORT).show()
+                                        finish()
                                     }
                         }
                     }

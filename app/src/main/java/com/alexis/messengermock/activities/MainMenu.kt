@@ -103,9 +103,13 @@ class MainMenu : AppCompatActivity() {
                 FirebaseAuth.getInstance().signOut()
                 verifyUserIsLogged()
             }
-            R.id.nav_user_settings ->{
+            R.id.nav_user_settings -> {
                 val intentToUserSettings = Intent(this, UserSettings::class.java)
                 startActivity(intentToUserSettings)
+            }
+            R.id.nav_add_friend -> {
+                val intentToAddFriends = Intent(this, AddFriends::class.java)
+                startActivity(intentToAddFriends)
             }
         }
         return super.onOptionsItemSelected(item)
