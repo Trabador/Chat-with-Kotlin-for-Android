@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import com.alexis.messengermock.dataclasses.User
 import com.alexis.messengermock.R
+import com.alexis.messengermock.misc.CustomProgressDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -43,6 +44,9 @@ class Register : AppCompatActivity() {
             return
         }
         else{
+            val message = "Please wait ... "
+            val dialog = CustomProgressDialog.createDialog(this,message)
+            dialog.show()
             fbAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if(!it.isSuccessful) {
@@ -53,10 +57,12 @@ class Register : AppCompatActivity() {
                         Toast.makeText(applicationContext, "User Created", Toast.LENGTH_SHORT).show()
                         emailField.setText("")
                         passField.setText("")
+                        dialog.dismiss()
                         val intentToMainMenu = Intent(this, MainMenu::class.java)
                         intentToMainMenu.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                         startActivity(intentToMainMenu)
                     }.addOnFailureListener {
+                        dialog.dismiss()
                         Log.d("Main", "Error creating user: ${it.message}")
                         Toast.makeText(applicationContext, "Error with email: ${it.message}", Toast.LENGTH_SHORT).show()
                     }

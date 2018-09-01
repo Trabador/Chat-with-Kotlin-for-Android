@@ -9,6 +9,7 @@ import android.view.MenuItem
 import com.alexis.messengermock.R
 import com.alexis.messengermock.dataclasses.Message
 import com.alexis.messengermock.dataclasses.User
+import com.alexis.messengermock.misc.CustomProgressDialog
 import com.alexis.messengermock.viewitems.LatestMessageItem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.ChildEventListener

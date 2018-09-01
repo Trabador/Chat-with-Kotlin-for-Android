@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.alexis.messengermock.R
+import com.alexis.messengermock.misc.CustomProgressDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -55,6 +56,9 @@ class UserSettings : AppCompatActivity() {
         if(selectedPhotoUri == null){
             return
         }
+        val messageText = "Updating Profile ... "
+        val dialog = CustomProgressDialog.createDialog(this,messageText)
+        dialog.show()
         val filename = UUID.randomUUID().toString()
         val storageRef = FirebaseStorage.getInstance().getReference("/images/$filename")
         storageRef.putFile(selectedPhotoUri!!)
@@ -67,6 +71,7 @@ class UserSettings : AppCompatActivity() {
                             dbRef.updateChildren(newData)
                                     .addOnSuccessListener {
                                         Log.d("User", "Success updating")
+                                        dialog.dismiss()
                                         Toast.makeText(applicationContext, "Information  Updated ", Toast.LENGTH_SHORT).show()
                                         finish()
                                     }
