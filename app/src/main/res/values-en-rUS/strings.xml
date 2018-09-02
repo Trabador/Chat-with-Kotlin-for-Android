@@ -19,5 +19,7 @@
     <string name="userCreatedMsg">User created</string>
     <string name="errorCreatingMsg">Error with email or Password</string>
     <string name="imageUpdateMsg">Profile image updated</string>
+    <string name="enterMessage">Enter Message ...</string>
+    <string name="send">Send</string>
 
 </resources>

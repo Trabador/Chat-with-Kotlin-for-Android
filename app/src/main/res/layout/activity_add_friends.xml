@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#3fa6b6"
     tools:context=".activities.AddFriends">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/usersList"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:padding="8dp"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

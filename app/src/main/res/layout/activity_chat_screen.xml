@@ -14,9 +14,9 @@
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
-        android:background="@android:color/white"
+        android:background="@drawable/round_fields"
         android:ems="10"
-        android:hint="Enter message"
+        android:hint="@string/enterMessage"
         android:inputType="textPersonName"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -30,7 +30,9 @@
         android:layout_height="54dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Send"
+        android:background="@drawable/round_buttons"
+        android:text="@string/send"
+        android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

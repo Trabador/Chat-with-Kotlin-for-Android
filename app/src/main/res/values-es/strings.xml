@@ -19,5 +19,7 @@
     <string name="userCreatedMsg">Nuevo usuario creado</string>
     <string name="errorCreatingMsg">Error en correo o contraseña</string>
     <string name="imageUpdateMsg">Imagen de perfil actualizada</string>
+    <string name="enterMessage">Escribe aqui ...</string>
+    <string name="send">Enviar</string>
     
 </resources>

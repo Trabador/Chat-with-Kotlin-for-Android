@@ -2,6 +2,7 @@ package com.alexis.messengermock.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.widget.DividerItemDecoration
 import android.widget.Toast
 import com.alexis.messengermock.R
 import com.alexis.messengermock.dataclasses.FriendList
@@ -30,6 +31,7 @@ class AddFriends : AppCompatActivity() {
             addNewFriend(userItem.user)
         }
         usersList.adapter = adapter
+        usersList.addItemDecoration(DividerItemDecoration(this,DividerItemDecoration.VERTICAL))
     }
 
 

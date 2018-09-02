@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toStartOf="@+id/myAvatar"
         app:layout_constraintTop_toTopOf="@+id/myAvatar" />
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/myAvatar"
         android:layout_width="50dp"
         android:layout_height="50dp"
