@@ -28,7 +28,7 @@ class NewMessage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_message)
 
-        supportActionBar?.title = "Friend List"
+        supportActionBar?.title = resources.getString(R.string.friends)
 
         fetchFriendsFromDataBase()
 

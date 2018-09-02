@@ -27,10 +27,11 @@ class Login : AppCompatActivity() {
         val password = passFieldLogin.text.toString()
 
         if(email.isEmpty() || password.isEmpty()){
-            Toast.makeText(applicationContext, "Please fill all fields as required", Toast.LENGTH_SHORT).show()
+            val msg = resources.getString(R.string.fillMsg)
+            Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
             return
         }
-        val message = "Logging in ... "
+        val message = resources.getString(R.string.loginMsg)
         val dialog = CustomProgressDialog.createDialog(this, message)
         dialog.show()
         fbAuth.signInWithEmailAndPassword(email, password)
@@ -46,7 +47,8 @@ class Login : AppCompatActivity() {
                 }.addOnFailureListener {
                     dialog.dismiss()
                     Log.d("login", "Fail to login: ${it.message}")
-                    Toast.makeText(applicationContext, "Error: ${it.message}", Toast.LENGTH_SHORT).show()
+                    val msg = resources.getString(R.string.errorCreatingMsg)
+                    Toast.makeText(applicationContext, "$msg: ${it.message}", Toast.LENGTH_LONG).show()
                 }
     }
 

@@ -23,7 +23,7 @@ class AddFriends : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_friends)
 
-        supportActionBar?.title = "Add Friend"
+        supportActionBar?.title = resources.getString(R.string.addFriend)
         fetchUsersFromDataBase()
         adapter.setOnItemClickListener { item, view ->
             val userItem = item as UserItem

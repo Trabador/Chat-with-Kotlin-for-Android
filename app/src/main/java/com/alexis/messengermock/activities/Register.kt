@@ -40,11 +40,12 @@ class Register : AppCompatActivity() {
         Log.d("Main","$email , $password ")
 
         if(email.isEmpty() || password.isEmpty()){
-            Toast.makeText(applicationContext, "Please fill all fields as required", Toast.LENGTH_SHORT).show()
+            val msg = resources.getString(R.string.fillMsg)
+            Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
             return
         }
         else{
-            val message = "Please wait ... "
+            val message = resources.getString(R.string.waitMsg)
             val dialog = CustomProgressDialog.createDialog(this,message)
             dialog.show()
             fbAuth.createUserWithEmailAndPassword(email, password)
@@ -54,7 +55,8 @@ class Register : AppCompatActivity() {
                         }
                         Log.d("Main", "User created: ${it.result.user.uid}")
                         saveUserToFireBase(email)
-                        Toast.makeText(applicationContext, "User Created", Toast.LENGTH_SHORT).show()
+                        val msg = resources.getString(R.string.userCreatedMsg)
+                        Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
                         emailField.setText("")
                         passField.setText("")
                         dialog.dismiss()
@@ -64,7 +66,8 @@ class Register : AppCompatActivity() {
                     }.addOnFailureListener {
                         dialog.dismiss()
                         Log.d("Main", "Error creating user: ${it.message}")
-                        Toast.makeText(applicationContext, "Error with email: ${it.message}", Toast.LENGTH_SHORT).show()
+                        val msg = resources.getString(R.string.errorCreatingMsg)
+                        Toast.makeText(applicationContext, "$msg: ${it.message}", Toast.LENGTH_LONG).show()
                     }
         }
     }

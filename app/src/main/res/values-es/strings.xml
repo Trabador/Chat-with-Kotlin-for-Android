@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="addFriend">Agregar Amigo</string>
+    <string name="settings">Configuracion</string>
+    <string name="logout">Salir de sesion</string>
+    <string name="friends">Lista de amigos</string>
+    <string name="register">Registrarse</string>
+    <string name="email">Correo electronico</string>
+    <string name="pass">Contraseña</string>
+    <string name="haveAccount">Ya estas registrado?</string>
+    <string name="login">Iniciar sesion</string>
+    <string name="selectPhoto">Seleccionar Imagen</string>
+    <string name="changePhoto">Cambiar imagen</string>
+    <string name="waitMsg">Por favor espera ...</string>
+    <string name="loginMsg">Iniciado sesion ...</string>
+    <string name="updateMsg">Actualizando imagen ...</string>
+    <string name="fillMsg">Por favor llena los campos requeridos</string>
+    <string name="userCreatedMsg">Nuevo usuario creado</string>
+    <string name="errorCreatingMsg">Error en correo o contraseña</string>
+    <string name="imageUpdateMsg">Imagen de perfil actualizada</string>
+    
+</resources>

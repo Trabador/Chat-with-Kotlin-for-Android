@@ -24,6 +24,8 @@ class UserSettings : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_settings)
+
+        supportActionBar?.title = resources.getString(R.string.settings)
         selectImageButton.setOnClickListener {
             selectPhotoImage()
         }
@@ -56,7 +58,7 @@ class UserSettings : AppCompatActivity() {
         if(selectedPhotoUri == null){
             return
         }
-        val messageText = "Updating Profile ... "
+        val messageText = resources.getString(R.string.updateMsg)
         val dialog = CustomProgressDialog.createDialog(this,messageText)
         dialog.show()
         val filename = UUID.randomUUID().toString()
@@ -72,7 +74,8 @@ class UserSettings : AppCompatActivity() {
                                     .addOnSuccessListener {
                                         Log.d("User", "Success updating")
                                         dialog.dismiss()
-                                        Toast.makeText(applicationContext, "Information  Updated ", Toast.LENGTH_SHORT).show()
+                                        val msg = resources.getString(R.string.imageUpdateMsg)
+                                        Toast.makeText(applicationContext, msg, Toast.LENGTH_SHORT).show()
                                         finish()
                                     }
                         }
