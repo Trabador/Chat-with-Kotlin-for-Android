@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:background="@android:color/white"
+        android:background="@drawable/round_fields"
         android:maxWidth="240dp"
         android:padding="10dp"
         android:paddingLeft="10dp"
