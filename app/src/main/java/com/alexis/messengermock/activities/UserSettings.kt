@@ -56,6 +56,8 @@ class UserSettings : AppCompatActivity() {
 
     private fun updateData(){
         if(selectedPhotoUri == null){
+            val msg = resources.getString(R.string.noImageMsg)
+            Toast.makeText(this,msg,Toast.LENGTH_SHORT).show()
             return
         }
         val messageText = resources.getString(R.string.updateMsg)

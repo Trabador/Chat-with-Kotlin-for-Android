@@ -21,5 +21,6 @@
     <string name="imageUpdateMsg">Imagen de perfil actualizada</string>
     <string name="enterMessage">Escribe aqui ...</string>
     <string name="send">Enviar</string>
+    <string name="noImageMsg">Por favor selecciona una imagen</string>
     
 </resources>
